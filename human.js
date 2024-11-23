@@ -1,3 +1,3 @@
-exports.hello = function(msg) {
-    console.log(msg);
+exports.hello = function (msg) {
+  console.log(msg);
 };

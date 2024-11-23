@@ -5,11 +5,13 @@
   "version": "1.2.3",
   "private": true,
   "dependencies": {
-    "modulo-1": "1.0.0",
-    "modulo-2": "~1.0.0",
-    "modulo-3": ">=1.0.0"
+    "http": "^0.0.1-security"
   },
-  "devDependencies": {
-    "modulo-4": "*"
-  }
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "node hello_server.js",
+    "helo": "node hello_server3.js"
+  },
+  "license": "ISC"
 }

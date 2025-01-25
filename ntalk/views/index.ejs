@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <% include ../header %>
+    <header>
+      <h1>N-talk</h1>
+      <h4>Bem-vindo</h4>
+    </header>
+    <section>
+      <form action="/entrar" method="post">
+        <input type="text" name="usuario[nome]" placeholder="Digite o nome"><br>
+        <input type="text" name="usuario[email]" placeholder="Digite o email"><br>
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+    <% include ../footer %>
+</body>
+
 </html>

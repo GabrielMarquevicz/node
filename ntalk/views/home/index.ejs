@@ -6,19 +6,14 @@
     <title>Ntalk - Agenda e Contatos</title>
   </head>
   <body>
+    <% include ../header %>
     <header>
-      <h1>Ntalk</h1>
-      <h4>Bem vindo!</h4>
+      <h2>Ntalk - Agenda de contatos</h2>
     </header>
     <section>
-      <form action="/entrar" method="post">
-        <input type="text" name="nome" placeholder="seu nome" /><br />
-        <input type="text" name="email" placeholder="seu email" /><br />
-        <button type="submit">Entrar</button>
-      </form>
+      <p>Bem vindo <%- usuario.nome %></p>
     </section>
-    <footer>
-      <small>Ntalk - Agenda e Contatos</small>
-    </footer>
+    <% include ../exit %>
+    <% include ../footer%>
   </body>
 </html>

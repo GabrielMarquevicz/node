@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <% include ../header %>
+  <body>
+    <% include ../header %>
     <header>
-      <h1>N-talk</h1>
-      <h4>Bem-vindo</h4>
+      <h2>Ntalk - Agenda de Contatos</h2>
     </header>
     <section>
-      <form action="/entrar" method="post">
-        <input type="text" name="usuario[nome]" placeholder="Digite o nome"><br>
-        <input type="text" name="usuario[email]" placeholder="Digite o email"><br>
-        <button type="submit">Entrar</button>
+      <form action="/contato" method="post">
+        <input
+          type="text"
+          name="contato[nome]"
+          placeholder="Digite o nome"
+        /><br />
+        <input
+          type="text"
+          name="contato[email]"
+          placeholder="Digite o email"
+        /><br />
+        <button type="submit">Cadastrar</button>
       </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Acao</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contatos.forEach(function(contato,index) { %>
+          <tr>
+            <td><%- contato.nome %></td>
+            <td><%- contato.email %></td>
+            <td><a href="/contato/<%- index %>">Detalhes</a></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
     </section>
-    <% include ../footer %>
-</body>
-
+    <% include ../exit %> <% include ../footer %>
+  </body>
 </html>

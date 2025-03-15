@@ -12,6 +12,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "express-load":"1.1.16"
+    "express-load": "1.1.16",
+    "socket.io": "0.9.16"
   }
 }

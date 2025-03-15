@@ -16,6 +16,13 @@ app.get("/usuarios", routes.user.index);
 
 load("models").then("controllers").then("routes").into(app);
 
+io.sockets.on('connection', function (client) {
+  client.on('send-server', function (data) {
+    var msg = "<b>"+data.nome+":</b> "+data.msg+"<br>";
+    client.emit('send-client', msg);
+  });
+});
+
 app.listen(3000, function () {
   console.log("Ntalk it's on! :)");
 });
